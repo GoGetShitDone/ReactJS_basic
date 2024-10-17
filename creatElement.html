@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script>
+        const root = document.getElementById("root");
+        
+        const h1 = React.createElement(
+            "h1", 
+            {
+                id:"title",
+                onMouseEnter:() => console.log("Mouse Enterd"),
+                onClick:() => console.log("Mouse Clicked"),
+            }, 
+            "main");
+        
+        const btn = React.createElement(
+            "button", 
+            {
+                onClick:() => console.log("Clicked!!!",),
+                style: {
+                    backgroundColor:"blue",
+                },
+            }, 
+            "Click me!");
+        
+        const container = React.createElement(
+            "div", 
+            null, 
+            [h1, btn]);
+
+        ReactDOM.render(container, root);
+        </script>
+</html>
